@@ -4,12 +4,14 @@
 
 import _ from 'lodash';
 
-import { ReactiveVar } from 'meteor/reactive-var';
+import { acOptions } from '../classes/options.class.js';
 
-let _conf = {};
-AccountsConf._conf = new ReactiveVar( _conf );
+AccountsConf._conf = {};
 
 AccountsConf._defaults = {
+    haveEmailAddress: AccountsConf.C.Identifier.MANDATORY,
+    haveUsername: AccountsConf.C.Identifier.NONE,
+    preferredLabel: AccountsConf.C.PreferredLabel.EMAIL_ADDRESS,
     verbosity: AccountsConf.C.Verbose.CONFIGURE
 };
 
@@ -20,19 +22,15 @@ AccountsConf._defaults = {
  * @returns {Object} the package configuration
  */
 AccountsConf.configure = function( o ){
+    // acts as a setter
     if( o && _.isObject( o )){
-        _conf = AccountsConf._conf.get();
-        _.merge( _conf, AccountsConf._defaults, o );
-        AccountsConf._conf.set( _conf );
-        // be verbose if asked for
-        if( _conf.verbosity & AccountsConf.C.Verbose.CONFIGURE ){
-            //console.log( 'pwix:accounts-manager configure() with', o, 'building', AccountsList._conf );
-            console.log( 'pwix:accounts-manager configure() with', o );
-        }
+        _.merge( AccountsConf._conf, AccountsConf._defaults, o );
+        AccountsConf._opts.base_set( AccountsConf._conf );
+        _verbose( AccountsConf.C.Verbose.CONFIGURE, 'pwix:accounts-manager configure() with', o );
     }
-    // also acts as a getter
-    return AccountsConf._conf.get();
+    // and as a getter too
+    return AccountsConf._opts;
 }
 
-_.merge( _conf, AccountsConf._defaults );
-AccountsConf._conf.set( _conf );
+_.merge( AccountsConf._conf, AccountsConf._defaults );
+AccountsConf._opts = new acOptions( AccountsConf._conf );

@@ -71,16 +71,34 @@ The package's is configured through a call to the `AccountsConf.configure()` met
 
 Known configuration options are:
 
+- `haveEmailAddress`
+- `haveUsername`
+
+    Whether the application wants its user accounts be configured with or without an email address (resp. a username), and whether it is optional or mandatory.
+
+    For each of these terms, accepted values are:
+
+    - `AccountsConf.C.Identifier.NONE`: the field is not displayed nor considered
+    - `AccountsConf.C.Identifier.OPTIONAL`: the field is proposed to the user, but may be left empty
+    - `AccountsConf.C.Identifier.MANDATORY`: the input field must be filled by the user
+
+    At least one of these fields MUST be set as `AccountsConf.C.Identifier.MANDATORY`. Else, the default value will be applied.
+
+    Defauts to:
+
+    - `haveEmailAddress`: `AccountsConf.C.Identifier.MANDATORY`
+    - `haveUsername`: `AccountsConf.C.Identifier.NONE`
+
+    Please be conscious that some features of your application may want display an identifier for each user. It would be a security hole to let the application display a verified email address anywhere, as this would be some sort of spam magnet!
+
 - `preferredLabel`
 
-    When not explicitely specified, which label choose to qualify a user account? Following values are accepted:
+    When not explicitely specified, which label choose to qualify a user account ? Following values are accepted:
 
     - `AccountsConf.C.PreferredLabel.USERNAME`
     - `AccountsConf.C.PreferredLabel.EMAIL_ADDRESS`
 
-    A function can be provided by the application for this parm. The function will be called without argument and must return one of the accepted values.
-
-    Defaults to `AccountsConf.C.preferredLabel.EMAIL_ADDRESS`, though the actually displayed label heavily depends of the runtime configuration as we try to always display something.
+    Defaults to `AccountsConf.C.preferredLabel.EMAIL_ADDRESS`, though the actually displayed label heavily depends of the runtime configuration as we try to always display something. At the last, the returned label may be nothing else than the document identifier.
 
 - `verbosity`
 
@@ -100,7 +118,9 @@ Known configuration options are:
 
     Defaults to `AccountsConf.C.Verbose.CONFIGURE`.
 
-All configuration options can be provided either by their value, or as a function which returns the value.
+    The configured verbosity level should be considered as only relevant for this `pwix:accounts-conf` package. Other packages which make use of this one should have their own verbosity configuration.
+
+All configuration options can be provided either by their value, or as a function which will be called without argument and must returns the value.
 
 Please note that `AccountsConf.configure()` method should be called in the same terms both in client and server sides.
 

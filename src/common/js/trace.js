@@ -3,7 +3,7 @@
  */
 
 _verbose = function( level ){
-    if( AccountsConf.opts().verbosity() & level ){
+    if( AccountsConf.configure().verbosity() & level ){
         let args = [ ...arguments ];
         args.shift();
         console.debug( ...args );

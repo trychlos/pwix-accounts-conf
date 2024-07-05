@@ -13,8 +13,15 @@ export class acOptions extends Options.Base {
     // static data
     //
 
-    // possible user label
-    static Labels = [
+    // have email address / username
+    static Identifiers = [
+        AccountsConf.C.Identifier.NONE,
+        AccountsConf.C.Identifier.MANDATORY,
+        AccountsConf.C.Identifier.OPTIONAL
+    ];
+
+    // preferred user label
+    static PreferredLabels = [
         AccountsConf.C.PreferredLabel.USERNAME,
         AccountsConf.C.PreferredLabel.EMAIL_ADDRESS
     ];
@@ -48,19 +55,37 @@ export class acOptions extends Options.Base {
 
     /**
      * Getter/Setter
+     * @param {String|Function} value whether the application wants an email address
+     * @returns {String}
+     */
+    haveEmailAddress( value ){
+        return this.base_gsStringObjectFn( 'haveEmailAddress', value, { default: AccountsConf._defaults.haveEmailAddress, ref: acOptions.Identifiers });
+    }
+
+    /**
+     * Getter/Setter
+     * @param {String|Function} value whether the application wants a username
+     * @returns {String}
+     */
+    haveUsername( value ){
+    return this.base_gsStringObjectFn( 'haveUsername', value, { default: AccountsConf._defaults.haveUsername, ref: acOptions.Identifiers });
+    }
+
+    /**
+     * Getter/Setter
      * @param {String|Function} value preferred label when displaying a user
      * @returns {String}
      */
     preferredLabel( value ){
-        return this.base_gsStringObjectFn( 'preferredLabel', value, { default: AccountsConf._defaults.conf.preferredLabel, ref: acOptions.Labels });
+        return this.base_gsStringObjectFn( 'preferredLabel', value, { default: AccountsConf._defaults.preferredLabel, ref: acOptions.PreferredLabels });
     }
 
     /**
      * Getter/Setter
      * @param {Integer|Function} value verbosity level
-     * @returns {String}
+     * @returns {Integer}
      */
     verbosity( value ){
-        return this.base_gsIntegerFn( 'verbosity', value, { default: AccountsConf._defaults.conf.verbosity, ref: acOptions.Labels });
+        return this.base_gsIntegerFn( 'verbosity', value, { default: AccountsConf._defaults.verbosity });
     }
 }
