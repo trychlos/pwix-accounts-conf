@@ -1,6 +1,6 @@
 Package.describe({
     name: 'pwix:accounts-conf',
-    version: '1.0.0-rc',
+    version: '1.0.0',
     summary: 'Meteor accounts common configuration',
     git: 'https://github.com/trychlos/pwix-accounts-conf',
     documentation: 'README.md'
