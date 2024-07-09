@@ -30,7 +30,7 @@ The configuration of the package.
 
 See [below](#configuration) to use it as a setter.
 
-When used as a getter, you have to explicitely call the option function to get its value.
+When used as a getter, you have to explicitely call the option function to get its value (see `pwix:options`).
 
 Example:
 
@@ -39,12 +39,6 @@ Example:
 ```
 
 A reactive data source.
-
-##### `AccountsConf.opts()`
-
-A getter which returns the current configuration options as an `Options.Base` object.
-
-See `pwix:options` package for a full description of the `Options.Base` class.
 
 #### Constants
 
@@ -98,7 +92,7 @@ Known configuration options are:
     - `AccountsConf.C.PreferredLabel.USERNAME`
     - `AccountsConf.C.PreferredLabel.EMAIL_ADDRESS`
 
-    Defaults to `AccountsConf.C.preferredLabel.EMAIL_ADDRESS`, though the actually displayed label heavily depends of the runtime configuration as we try to always display something. At the last, the returned label may be nothing else than the document identifier.
+    Defaults to `AccountsConf.C.PreferredLabel.EMAIL_ADDRESS`, though the actually displayed label heavily depends of the runtime configuration as we try to always display something. At the last, the returned label may be nothing else than the document identifier.
 
 - `verbosity`
 
