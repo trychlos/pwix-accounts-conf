@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.0.1-rc
+### 1.0.1
 
-    Release date: 
+    Release date: 2024- 7-31
 
     - Fix configure() verbose log
 
@@ -16,4 +16,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 9th
+- Last updated on 2024, Jul. 31st
