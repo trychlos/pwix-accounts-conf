@@ -26,7 +26,7 @@ AccountsConf.configure = function( o ){
     if( o && _.isObject( o )){
         _.merge( AccountsConf._conf, AccountsConf._defaults, o );
         AccountsConf._opts.base_set( AccountsConf._conf );
-        _verbose( AccountsConf.C.Verbose.CONFIGURE, 'pwix:accounts-manager configure() with', o );
+        _verbose( AccountsConf.C.Verbose.CONFIGURE, 'pwix:accounts-conf configure() with', o );
     }
     // and as a getter too
     return AccountsConf._opts;

@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Fix configure() verbose log
 
 ### 1.0.0
 
