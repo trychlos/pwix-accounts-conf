@@ -4,15 +4,6 @@
 
 AccountsConf.C = {
 
-    // when subscribing to 'emails' publication, whether to have a single row per email address
-    //  or a single row per user
-    /*
-    EmailsPublication: {
-        PER_EMAIL:  'EMAIL',
-        PER_USER:   'USER'
-    },
-    */
-
     // whether email address (resp. username) is used by the application
     Identifier: {
         NONE:      'NONE',

@@ -6,7 +6,7 @@
 
     Release date: 
 
-    - 
+    - Remove obsolete code
 
 ### 1.0.1
 
