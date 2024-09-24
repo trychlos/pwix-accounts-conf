@@ -11,6 +11,15 @@ AccountsConf.C = {
         OPTIONAL:  'OPTIONAL'
     },
 
+    // password estimated strength
+    Password: {
+        VERYWEAK:   'AC_PWD_VERYWEAK',
+        WEAK:       'AC_PWD_WEAK',
+        MEDIUM:     'AC_PWD_MEDIUM',
+        STRONG:     'AC_PWD_STRONG',
+        VERYSTRONG: 'AC_PWD_VERYSTRONG'
+    },
+
     // when choosing a preferred label
     PreferredLabel: {
         USERNAME:      'USERNAME',

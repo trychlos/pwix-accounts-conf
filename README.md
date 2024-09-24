@@ -42,6 +42,14 @@ A reactive data source.
 
 #### Constants
 
+##### When defining the required password complexity
+
+- `AccountsConf.C.Password.VERYWEAK`
+- `AccountsConf.C.Password.WEAK`
+- `AccountsConf.C.Password.MEDIUM`
+- `AccountsConf.C.Password.STRONG`
+- `AccountsConf.C.Password.VERYSTRONG`
+
 ##### When choosing the emails publication mode
 
 - `AccountsConf.C.EmailsPublication.PER_EMAIL`

@@ -7,6 +7,7 @@
     Release date: 
 
     - Remove obsolete code
+    - Host password strength constants
 
 ### 1.0.1
 
