@@ -8,6 +8,7 @@
 
     - Remove obsolete code
     - Host password strength constants
+    - Mark this package obsolete
 
 ### 1.0.1
 

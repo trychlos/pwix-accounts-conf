@@ -4,6 +4,8 @@
 
 A Meteor package which gathers and shares configurations for `pwix:accounts-ui`, `pwix:accounts-tools` and others. No more, no less.
 
+**Please note that, as of 2024-10-04, this package is obsoleted by new `[pwix-accounts-hub](https://github.com/trychlos/pwix-accounts-hub)`.**
+
 ## Installation
 
 This Meteor package is installable with the usual command:
