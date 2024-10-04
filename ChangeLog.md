@@ -2,9 +2,9 @@
 
 ## ChangeLog
 
-### 1.0.2-rc
+### 1.0.2
 
-    Release date: 
+    Release date: 2024-10- 4
 
     - Remove obsolete code
     - Host password strength constants
@@ -24,4 +24,4 @@
 
 ---
 P. Wieser
-- Last updated on 2024, Jul. 31st
+- Last updated on 2024, Oct. 4th
